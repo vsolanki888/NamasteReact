@@ -1,7 +1,6 @@
 {
   "name": "namaste-react",
   "version": "1.0.0",
-  "main": "App.js",
   "scripts": {
     "test": "jest"
   },
@@ -18,5 +17,12 @@
   "description": "",
   "devDependencies": {
     "parcel": "^2.16.3"
-  }
+  },
+  "dependencies": {
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
+  },
+  "browserlist": [
+    "last 2 versions"
+  ] 
 }
