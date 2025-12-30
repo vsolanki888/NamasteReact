@@ -1,6 +1,7 @@
 # Namaste React
 
 #parcel
+
 - Dev Build
 - Local Server
 - HMR (Hot Module Replacement)
@@ -18,3 +19,32 @@
 - HTTPs support
 - Tree Shaking - remove unsed code
 - Different builds for dev and prod
+
+# Food Delivery App
+
+/\*\*
+
+- Header
+- - Logo
+- - Nav items
+- Body
+- - Search
+- - RestaurantContainer
+-      - RestaurantCard
+-         - Image
+-         - Name of restaurant, Star Rating, Cusine, Delivery Time
+- Footer
+- - Copyright
+- - Links
+- - Address
+- - Contact
+- \*/
+
+# Type of import/export
+
+    - Default
+        - export default Component;
+        - import Component from './Component';
+    - Named
+        - export Compoment1;
+        - import {Compenent1} from './Component1';
