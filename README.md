@@ -42,9 +42,20 @@
 
 # Type of import/export
 
-    - Default
-        - export default Component;
-        - import Component from './Component';
-    - Named
-        - export Compoment1;
-        - import {Compenent1} from './Component1';
+- Default
+  - export default Component;
+  - import Component from './Component';
+- Named
+  - export Compoment1;
+  - import {Compenent1} from './Component1';
+
+# React Hooks
+
+    (Normal javascript utility function)
+
+-useState() = create super powerful state variable
+
+# Routing type
+
+- Client Side
+- Server Side

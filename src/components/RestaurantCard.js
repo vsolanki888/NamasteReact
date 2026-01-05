@@ -1,6 +1,6 @@
 const { CDN_URL } = require("../utils/constant");
 const RestaurantCard = (props) => {
-  const { info } = props?.restaurantsList;
+  const { info } = props?.ListOfRestaurants;
   const {
     name,
     cloudinaryImageId,

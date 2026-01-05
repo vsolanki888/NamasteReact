@@ -49,8 +49,9 @@
   word-break: break-word;
 }
 
-.search {
+.filter {
   padding: 10px;
+  display: flex;
 }
 
 .footer {
@@ -61,4 +62,23 @@
 
 .restaturant-logo {
   width: 100%;
+}
+.filter-btn {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  border: solid 1px black;
+}
+
+.shimmer-card {
+  background-color: #f0f0f0;
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+  height: 300px;
+  overflow: hidden;
 }
