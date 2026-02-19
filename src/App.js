@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -6,9 +6,13 @@ import Footer from "./components/Footer";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Cart from "./components/Cart";
+// import Grocery from "./components/Grocery";
 import Error from "./components/Error";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
+import UserContext from "./utils/UserContext";
+
+const Grocery = lazy(() => import("./components/Grocery"));
 
 // const div = [React.createElement("div", {id: "parent"},
 //     React.createElement("child", {id: "child"},
@@ -53,12 +57,22 @@ import RestaurantMenu from "./components/RestaurantMenu";
 // );
 
 const AppLayout = () => {
+  const [userName, setUserName] = useState();
+
+  useEffect(() => {
+    const data = {
+      name: "Vishal",
+    };
+    setUserName(data.name);
+  }, []);
   return (
-    <div className="app">
-      <Header />
-      <Outlet />
-      <Footer />
-    </div>
+    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+      <div className="app">
+        <Header />
+        <Outlet />
+        <Footer />
+      </div>
+    </UserContext.Provider>
   );
 };
 
@@ -83,6 +97,15 @@ const appRouter = createBrowserRouter([
         errorElement: <Error />,
       },
       {
+        path: "/grocery",
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <Grocery />
+          </Suspense>
+        ),
+        errorElement: <Error />,
+      },
+      {
         path: "/cart",
         element: <Cart />,
         errorElement: <Error />,
@@ -99,5 +122,5 @@ const appRouter = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={appRouter} />
+  <RouterProvider router={appRouter} />,
 );
