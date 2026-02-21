@@ -59,3 +59,17 @@
 
 - Client Side
 - Server Side
+
+# Redux tool kit
+
+- Install libraries @reduxjs/toolkit and react-redux
+- Build our own store
+- Connect our store to our app(bridge)
+- Create slice (cart)
+- Dispatch(action)
+
+# Developer Testing
+
+- Unit Testing
+- Integration Testing
+- End to End Testing

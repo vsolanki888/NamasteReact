@@ -11,6 +11,8 @@ import Error from "./components/Error";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 
 const Grocery = lazy(() => import("./components/Grocery"));
 
@@ -65,14 +67,27 @@ const AppLayout = () => {
     };
     setUserName(data.name);
   }, []);
+  // create context way
+  // return (
+  //   <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+  //     <div className="app">
+  //       <Header />
+  //       <Outlet />
+  //       <Footer />
+  //     </div>
+  //   </UserContext.Provider>
+  // );
+  // redux way
   return (
-    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-      <div className="app">
-        <Header />
-        <Outlet />
-        <Footer />
-      </div>
-    </UserContext.Provider>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+        <div className="app">
+          <Header />
+          <Outlet />
+          <Footer />
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 

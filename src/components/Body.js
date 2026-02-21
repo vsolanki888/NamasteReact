@@ -101,13 +101,12 @@ const Body = () => {
           >
             Clear Filter
           </button>
-        </div>
-        <div className="search p-4 m-4">
           <label className="px-4 py-2">User Name:</label>
           <input
             type="text"
             value={loggedInUser}
             onChange={(e) => setUserName(e.target.value)}
+            className="border-2 border-gray-300 rounded-lg p-2"
           ></input>
         </div>
       </div>

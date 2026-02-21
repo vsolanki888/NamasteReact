@@ -1,5 +1,11 @@
 const { CDN_URL } = require("../utils/constant");
+const { useDispatch } = require("react-redux");
+const { addItem } = require("../utils/cartSlice");
 const ItemList = ({ items }) => {
+  const dispatch = useDispatch();
+  const handleAddItem = (item) => {
+    dispatch(addItem(item));
+  };
   return (
     <div>
       {items?.map((item) => (
@@ -22,7 +28,10 @@ const ItemList = ({ items }) => {
               src={CDN_URL + item.card.info.imageId}
               alt={item.card.info.name}
             />
-            <button className="px-4 py-2 bg-green-100 rounded-lg float-right">
+            <button
+              className="px-4 py-2 bg-green-100 rounded-lg float-right"
+              onClick={() => handleAddItem(item)}
+            >
               Add +
             </button>
           </div>
