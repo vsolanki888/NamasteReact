@@ -73,3 +73,16 @@
 - Unit Testing
 - Integration Testing
 - End to End Testing
+
+# Setting up testing in our app
+
+- Install react testing library
+- Install jest
+- Install babel dependencies
+- Configure babel
+- Configure parcel config file to disable default babel traspilation
+- jest configuration
+- jest js dom library
+- install @babel/preset-react to make jsx use in the test
+- include in babel config
+- install @testing-library/jest-dom
